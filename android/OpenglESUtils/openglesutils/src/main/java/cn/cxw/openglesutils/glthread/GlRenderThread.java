@@ -29,7 +29,7 @@ public class GlRenderThread  extends Thread {
 
     protected String mThreadName = "GlRenderThread";
     public interface GLRenderer {
-        void onGlInit();
+        void onGlInit(int width, int height);
         void onGlResize(int width, int height);
         void onGlDrawFrame();
         void onGlDeinit();
@@ -101,7 +101,7 @@ public class GlRenderThread  extends Thread {
 
         Log.d(mThreadName, "gl thread start run ");
         if (mRenderer != null) {
-            mRenderer.onGlInit();
+            mRenderer.onGlInit(mViewWidth, mViewHeight);
         }
         while (true) {
             synchronized (mSyncToken) {

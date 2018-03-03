@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.cxw.magiccameralib.utils;
+package cn.cxw.openglesutils;
 
 public class TextureRotationUtil {
 

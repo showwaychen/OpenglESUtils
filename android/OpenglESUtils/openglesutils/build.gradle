@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 21
+        versionName "2.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -23,7 +23,22 @@ android {
     }
 
 }
-
+ext {
+    AARArchiveName = "openglesutils-" + android.defaultConfig.versionName + ".aar"
+}
+task deleteOldAAR(type: Delete) {
+    delete AARArchiveName
+}
+task exportAAR(type: Copy) {
+//原地址
+    from('build/outputs/aar/')
+//导出后的地址
+    into('./')
+    include('openglesutils-release.aar')
+    //重命名jar
+    rename('openglesutils-release.aar', AARArchiveName)
+}
+exportAAR.dependsOn(deleteOldAAR, build)
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

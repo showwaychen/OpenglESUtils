@@ -1,4 +1,4 @@
-package cn.cxw.magiccameralib.utils;
+package cn.cxw.openglesutils;
 
 /**
  * Created by user on 2017/12/14.
