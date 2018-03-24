@@ -16,6 +16,9 @@
 
 package cn.cxw.openglesutils;
 
+/**
+ *
+ */
 public class TextureRotationUtil {
 
 //    public static final float TEXTURE_NO_ROTATION[] = {
