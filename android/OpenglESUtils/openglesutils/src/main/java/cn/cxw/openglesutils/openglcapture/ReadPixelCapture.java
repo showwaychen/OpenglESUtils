@@ -41,7 +41,7 @@ public class ReadPixelCapture extends OpenglCapture {
                     GLES20.GL_RGBA,
                     GLES20.GL_UNSIGNED_BYTE,
                     mCaptureBuffer);
-//            Log.d(TAG, "glReadPixels time = " + (System.currentTimeMillis() - ptime));
+            Log.d(TAG, "glReadPixels time = " + (System.currentTimeMillis() - ptime));
             mCallback.onPreviewFrame(mCaptureBuffer, mWidth * 4, mWidth, mHeight, ptime);
         }
 

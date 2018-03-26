@@ -11,16 +11,16 @@ import cn.cxw.openglesutils.OpenglCommon;
 
 public abstract class OpenglCapture {
 
-    static public final int CAPTURETYPE_READPIXEL = 0;
-    static public final int CAPTURETYPE_GRAPHICBUFFER = 1;
-    public static OpenglCapture createCapturer(int type)
+    public static OpenglCapture createCapturer(Class<? extends OpenglCapture> cls)
     {
-        switch (type)
-        {
-            case CAPTURETYPE_READPIXEL:
-                return new ReadPixelCapture();
-                default:
-                    return null;
+        try {
+            return cls.newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            return null;
         }
     }
     public interface IFrameCaptured {

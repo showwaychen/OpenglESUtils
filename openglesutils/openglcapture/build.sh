@@ -1,0 +1,8 @@
+echo $NDKROOT
+rm -R Build
+set -e
+mkdir Build
+cd Build
+cmake .. -DCMAKE_SYSTEM_NAME=Android -DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a -DCMAKE_SYSTEM_VERSION=15 -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=4.9 -DCMAKE_ANDROID_NDK=$NDKROOT -DCMAKE_ANDROID_STL_TYPE=gnustl_static -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI=armeabi-v7a
+make -j4
+make install
