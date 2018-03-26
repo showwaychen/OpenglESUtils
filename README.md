@@ -3,15 +3,15 @@
    包括egl、opengl es线程、纹理加载操作、关联到texture的framebuffer等常用功能。
    
 #NDK层编译步骤
-   系统环境：Ubuntu
-   ndk版本：12b
-   cmake3.9以上
+   系统环境：Ubuntu<br>
+   ndk版本：12b<br>
+   cmake3.9以上<br>
    
-   export NDKROOT=/ndk dir/
-   mkdir thirdparts
-   cd thirdparts
-   git clone https://github.com/showwaychen/baselib.git
-   ./build.sh
-   cd ../openglesutils/openglcapture
-   ./build.sh
+   export NDKROOT=/ndkdir/ <br>
+   mkdir thirdparts<br>
+   cd thirdparts<br>
+   git clone https://github.com/showwaychen/baselib.git<br>
+   ./build.sh<br>
+   cd ../openglesutils/openglcapture<br>
+   ./build.sh<br>
    
